@@ -1,5 +1,6 @@
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
   entry: ['./app'],
   output: {
     path: path.resolve('build/'),
-    //publicPath: '/public/assets/',
+    publicPath: '/public/',
     filename: 'bundle.js'
   },
   resolve: {
@@ -27,23 +28,12 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015', 'react'],
-          env: {
-            development: {
-              plugins: [['react-transform', {
-                transforms: [{
-                  transform: 'react-transform-hmr',
-                  imports: ['react'],
-                  locals: ['module']
-                }]
-              }]]
-            }
-          }
+          presets: ['es2015', 'react']
         }
       },
       {
         test: /\.css$/,
-        loader: 'style!css!postcss'
+        loader: ExtractTextPlugin.extract('style', 'css!postcss')
       }
     ]
   },
@@ -52,15 +42,14 @@ module.exports = {
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/app/templates/index.tmpl.html"
+      template: __dirname + "/app/templates/index.production.tmpl.html"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new ExtractTextPlugin("style.css")
   ],
   devServer: {
+    contentBase: './build',
     colors: true,
-    historyApiFallback: true,
-    inline: true,
-    hot: true
+    historyApiFallback: true
   },
   devtool: 'eval-source-map'
 };
