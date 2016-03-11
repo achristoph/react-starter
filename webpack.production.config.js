@@ -1,15 +1,15 @@
-var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.resolve('app'),
   entry: ['./app'],
   output: {
     path: path.resolve('build/'),
-    publicPath: '/public/',
-    filename: 'bundle.js'
+    //publicPath: '/public/',
+    filename: '[name]-[hash].js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -44,7 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: __dirname + "/app/templates/index.production.tmpl.html"
     }),
-    new ExtractTextPlugin("style.css")
+    new ExtractTextPlugin("[name]-[hash].css")
   ],
   devServer: {
     contentBase: './build',

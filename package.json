@@ -8,7 +8,8 @@
     "start": "webpack-dev-server --progress",
     "startp": "webpack-dev-server -p --progress --config ./webpack.production.config.js",
     "lint": "eslint . --ext .js --ext .jsx",
-    "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress"
+    "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress",
+    "clean": "rm build/*"
   },
   "author": "Arthur Christoph",
   "license": "ISC",

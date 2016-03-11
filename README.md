@@ -1,3 +1,1 @@
-# react-starter
-Basic React Starter
-
+# React Starter App
