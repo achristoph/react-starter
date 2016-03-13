@@ -5,6 +5,7 @@ class NavBar extends Component {
   render() {
     return (
       <nav className="navbar">
+        <div className="logo"/>
         <div className="container">
           <ul className="navbar-list">
             <li className="navbar-item"><a className="navbar-link" href="#intro">Intro</a></li>

@@ -10,6 +10,14 @@
     display: flex
 }
 
+.logo {
+    background: url(../images/react.png) bottom center no-repeat;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin: 0px 10px 10px 10px;
+}
+
 /* Larger than tablet */
 @media (min-width: 150px) {
     /* Navbar */
@@ -39,6 +47,7 @@
     .navbar-list {
         list-style: none;
         margin-bottom: 0;
+        margin-left: 85px;
     }
 
     .navbar-item {
