@@ -7,7 +7,6 @@ module.exports = {
   entry: ['./app'],
   output: {
     path: path.resolve('build/'),
-    //publicPath: '/public/assets/',
     filename: 'bundle.js'
   },
   resolve: {
@@ -29,12 +28,12 @@ module.exports = {
         query: {
           presets: ['es2015', 'react'],
           env: {
-            development: {
-              plugins: [['react-transform', {
-                transforms: [{
-                  transform: 'react-transform-hmr',
-                  imports: ['react'],
-                  locals: ['module']
+            'development': {
+              'plugins': [['react-transform', {
+                'transforms': [{
+                  'transform': 'react-transform-hmr',
+                  'imports': ['react'],
+                  'locals': ['module']
                 }]
               }]]
             }
