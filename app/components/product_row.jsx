@@ -5,7 +5,7 @@ export default ({product}) => {
     <span style={{ color: 'red' }}> {product.name} </span>;
   return (
     <tr>
-      <td>{name}</td> <td>{product.price}</td>
+      <td>{name}</td><td>{product.price}</td>
     </tr>
   );
 };
