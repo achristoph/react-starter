@@ -1,1 +1,8 @@
-# React Starter App
+# Inventory App
+* FilterableProductTable
+  * SearchBar
+  * ProductTable
+    * ProductCategoryRow
+    * ProductRow
+
+
