@@ -5,14 +5,14 @@ import products from '../models/products';
 
 class FilterableProductTable extends Component {
 
-  // constructor() {
-  //   super();
+  constructor() {
+    super();
     // this.handleUserInput = this.handleUserInput.bind(this);
-    // this.state = {
-    //   filterText: '',
-    //   inStockOnly: false
-    // }
-  // }
+    this.state = {
+      filterText: 'Foo',
+      inStockOnly: false
+    }
+  }
 
   // handleUserInput(filterText, inStockOnly) {
   //   this.setState({
@@ -25,12 +25,12 @@ class FilterableProductTable extends Component {
     return (
       <div>
         <SearchBar
-          // {...this.state}
+          {...this.state}
           // onUserInput={this.handleUserInput}
           />
         <ProductTable
           products={products}
-          // {...this.state}
+          {...this.state}
           />
       </div>
     )

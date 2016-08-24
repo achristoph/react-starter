@@ -7,9 +7,9 @@ export default ({products, filterText, inStockOnly}) => {
   let rows = [], lastCategory = null;
 
   products.forEach((product) => {
-    // if (!product.name.toLowerCase().includes(filterText.toLowerCase()) || (!product.stocked && inStockOnly)) {
-    //   return;
-    // }
+    if (!product.name.toLowerCase().includes(filterText.toLowerCase()) || (!product.stocked && inStockOnly)) {
+      return;
+    }
 
     if (product.category !== lastCategory) {
       rows.push(<CategoryRow category={product.category} key={product.category}/>);
