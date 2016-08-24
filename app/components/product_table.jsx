@@ -1,15 +1,15 @@
 import React from 'react';
-import CategoryRow from './category_row';
+import CategoryRow from './product_category_row';
 import ProductRow from './product_row';
 
+// export default ({products, filterText, inStockOnly}) => {
 export default ({products, filterText, inStockOnly}) => {
-
   let rows = [], lastCategory = null;
 
-  products.map((product) => {
-    if (!product.name.toLowerCase().includes(filterText.toLowerCase()) || (!product.stocked && inStockOnly)) {
-      return;
-    }
+  products.forEach((product) => {
+    // if (!product.name.toLowerCase().includes(filterText.toLowerCase()) || (!product.stocked && inStockOnly)) {
+    //   return;
+    // }
 
     if (product.category !== lastCategory) {
       rows.push(<CategoryRow category={product.category} key={product.category}/>);
