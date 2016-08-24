@@ -2,7 +2,6 @@ import React from 'react';
 import CategoryRow from './product_category_row';
 import ProductRow from './product_row';
 
-// export default ({products, filterText, inStockOnly}) => {
 export default ({products, filterText, inStockOnly}) => {
   let rows = [], lastCategory = null;
 
