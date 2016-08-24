@@ -3,7 +3,7 @@ import CategoryRow from './product_category_row';
 import ProductRow from './product_row';
 
 // export default ({products, filterText, inStockOnly}) => {
-export default ({products, filterText, inStockOnly}) => {
+export default ({products}) => {
   let rows = [], lastCategory = null;
 
   products.forEach((product) => {
@@ -12,7 +12,7 @@ export default ({products, filterText, inStockOnly}) => {
     // }
 
     if (product.category !== lastCategory) {
-      rows.push(<CategoryRow category={product.category} key={product.category}/>);
+      rows.push(<CategoryRow category={product.category}  key={product.category}/>);
     }
 
     rows.push(<ProductRow product={product} key={product.name}/>);
