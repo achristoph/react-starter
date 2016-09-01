@@ -57,7 +57,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: __dirname + '/app/templates/index.tmpl.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   devServer: {
     colors: true,

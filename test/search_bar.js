@@ -1,12 +1,11 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import NavBar from '../app/navbar.jsx';
+import SearchBar from '../app/components/search_bar.jsx';
 
 describe('NavBar', () => {
   it('should...', () => {
     const renderer = TestUtils.createRenderer();
-    renderer.render(<NavBar />);
+    renderer.render(<SearchBar />);
     const output = renderer.getRenderOutput();
-    expect(output.props['className']).toEqual('navbar');
   });
 });

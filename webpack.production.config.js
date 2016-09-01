@@ -47,9 +47,9 @@ module.exports = {
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/app/templates/index.production.tmpl.html"
+      template: __dirname + '/app/templates/index.production.tmpl.html'
     }),
-    new ExtractTextPlugin("[name]-[hash].css")
+    new ExtractTextPlugin('[name]-[hash].css')
   ],
   devServer: {
     contentBase: './build',
