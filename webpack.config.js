@@ -10,7 +10,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.ts', '.tsx']
   },
   module: {
     preLoaders: [
@@ -18,7 +18,8 @@ module.exports = {
         test: [/\.jsx?$/, /\.js$/],
         loaders: ['eslint'],
         exclude: /node_modules/
-      }
+      },
+      { test: /\.js$/, loader: 'source-map-loader' }
     ],
     loaders: [
       {
@@ -40,6 +41,7 @@ module.exports = {
           }
         }
       },
+      { test: /\.tsx?$/, loader: 'ts-loader' },
       {
         test: /\.css$/,
         loader: 'style!css!postcss'
@@ -47,15 +49,19 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=7000'
-      }
+      },
     ]
   },
+  // externals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM'
+  // },
   postcss: [
     require('autoprefixer')
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/app/templates/index.tmpl.html"
+      template: __dirname + '/app/templates/index.tmpl.html'
     }),
     new webpack.HotModuleReplacementPlugin()
   ],

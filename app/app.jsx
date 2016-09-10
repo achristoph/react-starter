@@ -5,6 +5,7 @@ import Content from './content';
 import '../css/normalize.css';
 import '../css/skeleton.css';
 import '../css/main.css';
+import Hello from './hello';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <div>
         <NavBar/>
         <Content/>
+        <Hello compiler="TypeScript" framework="React" />
       </div>
     );
   }

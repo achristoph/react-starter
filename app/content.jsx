@@ -6,7 +6,7 @@ class Content extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="twelve column">Hello World</div>
+          <div className="twelve column"></div>
         </div>
       </div>
     );
