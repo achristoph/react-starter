@@ -1,4 +1,4 @@
-const inStockFilter = (state = 'SHOW_ALL', action) => {
+export default filterProduct = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter
@@ -6,5 +6,3 @@ const inStockFilter = (state = 'SHOW_ALL', action) => {
       return state
   }
 }
-
-export default inStockFilter

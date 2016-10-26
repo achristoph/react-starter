@@ -1,4 +1,4 @@
-export default function search(state = 0, action) {
+export default searchProduct = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1
