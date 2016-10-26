@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM, { render } from 'react-dom'
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, Link, hashHistory } from 'react-router';
 
-// import Home from './home'
+import Home from './home'
 import About from './about'
+import Contact from './contact'
 import NavBar from './navbar';
 import Content from './content';
 import '../css/normalize.css';
 import '../css/skeleton.css';
 import '../css/main.css';
-
-const Home = () => <div><h1>Home</h1><NavBar /></div>;
-// const About = () => <div><h1>About</h1><NavBar /></div>;
 
 class App extends Component {
   constructor() {
@@ -76,8 +74,10 @@ App.defaultProps = {
 }
 
 // render(<Wrapper name="myApp" />, document.getElementById('app'));
-let router = <Router history={browserHistory}>
+let router = <Router history={hashHistory}>
   <Route path="/" component={App}></Route>
-  <Route path="/about" component={About}></Route>
+  <Route path="about" component={About}>
+    <Route path="contact(/:id)" component={Contact}></Route>
+  </Route>
 </Router>
 render(router, document.getElementById('app'));

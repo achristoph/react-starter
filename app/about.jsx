@@ -1,5 +1,5 @@
 import NavBar from './navbar';
 import React from 'react';
 
-const About = () => <div><h1>About</h1><NavBar /></div>;
+const About = (props) => <div><NavBar /><h1>About {props.params.id}</h1>{props.children}</div>;
 export default About;

@@ -19,7 +19,6 @@ class Content extends Component {
           <Widget content={this.state.content} update={this.update} />
           <Slider ref="red" update={this.update} />
           {this.state.red}
-          <Button>React</Button>
         </div>
       </div>
     );
