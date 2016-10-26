@@ -27,17 +27,17 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ['es2015', 'react'],
-          env: {
-            'development': {
-              'plugins': [['react-transform', {
-                'transforms': [{
-                  'transform': 'react-transform-hmr',
-                  'imports': ['react'],
-                  'locals': ['module']
-                }]
-              }]]
-            }
-          }
+          // env: {
+          //   'development': {
+          //     'plugins': [['react-transform', {
+          //       'transforms': [{
+          //         'transform': 'react-transform-hmr',
+          //         'imports': ['react'],
+          //         'locals': ['module']
+          //       }]
+          //     }]]
+          //   }
+          // }
         }
       },
       {
@@ -57,13 +57,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: __dirname + '/app/templates/index.tmpl.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    // new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     colors: true,
     historyApiFallback: true,
     inline: true,
-    hot: true
+    // hot: true,
+    port: 3000
   },
   // devtool: 'cheap-module-eval-source-map'
   devtool: 'inline-source-map'

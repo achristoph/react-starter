@@ -36,7 +36,7 @@ const Widget = (props) => {
   return (
     <div>
       <input type="text" onChange={props.update} />
-      <h1>{props.content}</h1>
+      <h5>{props.content}</h5>
     </div>
   );
 }
